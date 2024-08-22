@@ -30,7 +30,7 @@ public class UserList {
     //TODO: return true if process is completed, otherwise return false
     public boolean changePassword(String username, String oldPassword, String newPassword) {
         User existUser = findUserByUsername(username);
-        if (existUser != null && existUser.getPassword().equals(oldPassword)) {
+        if (existUser != null && existUser.validatePassword(oldPassword)) {
             existUser.setPassword(newPassword);
             return true;
         }
@@ -43,7 +43,7 @@ public class UserList {
     //TODO: return User object if username and password is correct, otherwise return null
     public User login(String username, String password) {
         User existUser = findUserByUsername(username);
-        if (existUser != null && existUser.getPassword().equals(password)) {
+        if (existUser != null && existUser.validatePassword(password)) {
             return existUser;
         }
         else {
