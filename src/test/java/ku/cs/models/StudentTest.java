@@ -18,7 +18,7 @@ class StudentTest {
         s1.addScore(40);
         assertEquals(40, s1.getScore());
         s1.addScore(30);
-        assertEquals(71, s1.getScore());
+        assertEquals(70, s1.getScore());
     }
 
     @Test

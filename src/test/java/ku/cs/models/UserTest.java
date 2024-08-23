@@ -38,12 +38,13 @@ class UserTest {
 
     @Test
     void testSetPassword() {
-        
+         user.setPassword("5678");
+         assertTrue(user.validatePassword("5678"));
     }
 
     @Test
     void testValidatePassword() {
-
+        assertTrue(user.validatePassword("1234"));
     }
 
 
